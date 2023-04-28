@@ -51,3 +51,13 @@ COPY loan_default(
 FROM "file_location (C:\\loan_default.csv)"'
 DELIMITER ','
 CSV HEADER;
+
+-- Create random 5000 records
+
+CREATE TABLE loan_default_lite
+AS (
+SELECT *
+	FROM loan_default
+	ORDER BY RANDOM()
+	LIMIT 5000
+);
